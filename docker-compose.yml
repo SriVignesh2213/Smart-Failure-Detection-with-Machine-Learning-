@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # 1. MongoDB Datastore
+  mongodb:
+    image: mongo:latest
+    container_name: smart_failure_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=predictive_maintenance
+    volumes:
+      - mongo_data:/data/db
+
+  # 2. FastAPI ML Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smart_failure_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017
+      - MONGO_DB=predictive_maintenance
+      - JWT_SECRET=super-secret-production-key-change-me
+    depends_on:
+      - mongodb
+
+  # 3. React Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: smart_failure_frontend
+    restart: always
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
