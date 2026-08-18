@@ -132,4 +132,4 @@ backend/.venv/Scripts/pytest backend/tests/
 ---
 
 ## 📜 License & Acknowledgments
-Built using the **AI4I 2020 Predictive Maintenance Dataset** (UCI Machine Learning Repository).
+Built using the **AI4I 2020 Predictive Maintenance Dataset** (UCI Machine Learning Repository) and MIT Licensed 2026 
