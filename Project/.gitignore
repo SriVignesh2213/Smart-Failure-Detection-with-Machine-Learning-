@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+env/
+.python-version
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs and runtime artifacts
+*.log
+app.log
+
+# Jupyter / local notebooks
+.ipynb_checkpoints/
+
+# ML / model artifacts
+*.joblib
+*.pkl
+*.h5
+*.model
+catboost_info/
+mlruns/
+
+# Data / generated output
+*.csv
+!predictive_maintenance.csv
+visualizations/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+
+# Docker / local setup
+*.tar
+*.pid
+
+# Coverage / test reports
+.coverage
+htmlcov/
+coverage/
+
+# Build / temp files
+build/
+dist/
+out/
+tmp/
+*.tmp
